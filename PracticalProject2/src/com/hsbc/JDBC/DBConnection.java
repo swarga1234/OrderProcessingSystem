@@ -10,19 +10,19 @@ import java.time.LocalDate;
 
 public class DBConnection {
 
-	private static String jdbcUrl = "jdbc:mysql://localhost:3306/Project1;create=true";
+	private static String jdbcUrl = "jdbc:derby:Database_Name;create=true";
 	private static String jdbcUsername ="admin";
 	private static String jdbcPassword ="admin";
 	
-	static Connection connection;
+	Connection connection;
 	Statement statement;
-	PreparedStatement prepStatement;
+	PreparedStatement preparedStatement;
 	
 	
 	
-	public static Connection getConnection() {
+	public Connection getConnection() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("org.apache.derby.jdbc.ClientDriver");
 			connection = DriverManager.getConnection(jdbcUrl,jdbcUsername,jdbcPassword);
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -50,15 +50,8 @@ public class DBConnection {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		return prepStatement;
+		return preparedStatement;
 	}
 	
-	public Date getSQLDate(LocalDate date) {
-        return java.sql.Date.valueOf(date);
-    }
-
-    public LocalDate getUtilDate(Date sqlDate) {
-        return sqlDate.toLocalDate();
-    }
 	
 }
