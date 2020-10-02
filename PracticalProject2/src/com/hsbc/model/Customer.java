@@ -8,15 +8,15 @@ import java.util.Objects;
 public final class Customer {
 	private final int customerId;
 	private String customerName;
-	private final int gstNumber;
+	private final long gstNumber;
 	private String customerAddress;
 	private String city;
 	private String email;
-	private int phoneNumber;
+	private long phoneNumber;
 	private int pinCode;
 
-	public Customer(int customerId, String customerName, int gstNumber, String customerAddress, String city,
-			String email, int phoneNumber, int pinCode) {
+	public Customer(int customerId, String customerName, long gstNumber, String customerAddress, String city,
+			String email, long phoneNumber, int pinCode) {
 		super();
 		this.customerId = customerId;
 		this.customerName = customerName;
@@ -36,7 +36,7 @@ public final class Customer {
 	}
 
 	/**
-	 * @param customerName the customerName to set
+	 * @param customerName to set the customerName 
 	 */
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
@@ -50,7 +50,7 @@ public final class Customer {
 	}
 
 	/**
-	 * @param customerAddress the customerAddress to set
+	 * @param customerAddress to set the customerAddress 
 	 */
 	public void setCustomerAddress(String customerAddress) {
 		this.customerAddress = customerAddress;
@@ -64,7 +64,7 @@ public final class Customer {
 	}
 
 	/**
-	 * @param city the city to set
+	 * @param city to set the city 
 	 */
 	public void setCity(String city) {
 		this.city = city;
@@ -78,7 +78,7 @@ public final class Customer {
 	}
 
 	/**
-	 * @param email the email to set
+	 * @param email to set the email 
 	 */
 	public void setEmail(String email) {
 		this.email = email;
@@ -87,14 +87,14 @@ public final class Customer {
 	/**
 	 * @return the phoneNumber
 	 */
-	public int getPhoneNumber() {
+	public long getPhoneNumber() {
 		return phoneNumber;
 	}
 
 	/**
-	 * @param phoneNumber the phoneNumber to set
+	 * @param phoneNumber to set the phoneNumber
 	 */
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -106,7 +106,7 @@ public final class Customer {
 	}
 
 	/**
-	 * @param pinCode the pinCode to set
+	 * @param pinCode to set the pinCode
 	 */
 	public void setPinCode(int pinCode) {
 		this.pinCode = pinCode;
@@ -122,7 +122,7 @@ public final class Customer {
 	/**
 	 * @return the gstNumber
 	 */
-	public int getGstNumber() {
+	public long getGstNumber() {
 		return gstNumber;
 	}
 
