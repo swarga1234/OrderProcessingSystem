@@ -10,4 +10,5 @@ public interface ProductDao {
 	public List<Order> getQoutes(int customerId);
 	public void updateOrderStatus(int orderId);
 	public List<Order> getApprovedOrders(int customerId);
+	public List<Product> getProductList(int orderId);
 }

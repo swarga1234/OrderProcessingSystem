@@ -38,7 +38,7 @@ public class GetOrders extends HttpServlet {
 		List<Order> orders = service.getOrders(100);
 		HttpSession session = request.getSession();
 		session.setAttribute("orderKey", orders);
-		RequestDispatcher rd = request.getRequestDispatcher("CustomerOrderManagement.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("Display.jsp");
 		rd.forward(request, response);
 	}
 

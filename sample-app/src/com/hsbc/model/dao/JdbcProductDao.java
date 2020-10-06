@@ -51,7 +51,7 @@ public class JdbcProductDao implements ProductDao {
 		List<Order> orders = new ArrayList<Order>();
 		try {
 			Connection connection  = DBUtility.getConnection();
-			String Query  = "select * from orders where status  = 'pending' and customerid = "+customerId;
+			String Query  = "select * from orders where (status  = 'pending' or status = 'completed') and customerid = "+customerId;
 			PreparedStatement preparedStatement =  connection.prepareStatement(Query);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			while(resultSet.next()) {
@@ -144,6 +144,36 @@ public class JdbcProductDao implements ProductDao {
 			e.printStackTrace();
 		}
 		return orders;
+	}
+	
+	public List<Product> getProductList(int orderId){
+		List<Product> items = new ArrayList<Product>();
+		try {
+			Connection connection  = DBUtility.getConnection();
+			String loginQuery  = "select name, category, price,orderid from products p inner join orderedproducts op on p.productid=op.productid where op.orderid="+orderId;
+			PreparedStatement preparedStatement =  connection.prepareStatement(loginQuery);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			while(resultSet.next()) {
+				Product product = new Product();
+				product.setName(resultSet.getString("name"));
+				product.setCategory(resultSet.getString("category"));
+				product.setPrice(resultSet.getDouble("price"));
+				items.add(product);
+			}
+		
+			resultSet.close();
+			connection.close();
+			preparedStatement.close();
+			return items;
+			//scanner.close();
+		}catch(ClassNotFoundException e) {
+			e.printStackTrace();
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return items;
+		
 	}
 	
 

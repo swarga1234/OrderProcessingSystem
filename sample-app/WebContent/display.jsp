@@ -9,32 +9,54 @@
  <link rel ="stylesheet" href = "Z:/javaprgrams/sample-app/bootstrap.min.css">
 </head>
 <body>
+<h1>CUSTOMER'S APPROVED ORDERS</h1>
 <%@taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "core" %>
 		
-<form action = "AddProducts" method = "post"></form>	
 <table class="table table-hover table-dark" id = "Table">
   <thead>
     <tr>
-    <th scope="col">ADD</th>
-      <th scope="col">PRODUCTID</th>
-      <th scope="col">NAME</th>
-      <th scope="col">PRICE</th>
-      <th scope="col">CATEGORY</th>
+    <th scope="col">ORDERID</th>
+      <th scope="col">DATE</th>
+      <th scope="col">TOTAL VALUE</th>
+      <th scope="col">SHIPPING COST</th>
+      <th scope="col">SHIPPING AGENCY</th>
+      <th scope="col">STATUS</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
- <core:forEach items = "${listKey}" var = "u">
+ <core:forEach items = "${orderKey}" var = "u">
  	<tr> 
- 	<td><input type="checkbox"/></td>
-     <td> ${u.prodId}</td>
-      <td>${u.name}</td>
-      <td>${u.price}</td>
-      <td>${u.category}</td>
+     <td> ${u.orderId}</td>
+      <td>${u.date}</td>
+      <td>${u.totalValue}</td>
+      <td>${u.shippingCost}</td>
+      <td>${u.shippingAgency}</td>
+      <td>${u.status}</td>
+      <td>
+      <form name = "itemDetails" method = "post" action = "FetchDetails">
+      <input type="hidden" name = "orderId" value="${u.orderId}">
+      <input type = "submit" value = "Details">
+      </form>
+      </td>
+       <td>
+     
+     
+    <!--THIS BLOCK IS FOR INVOICE GENERATION  -->
+     
+      <form name="" method="post" action="">
+           <input type="hidden" name="orderId" value="${u.orderId}">
+      <input type="submit" value ="Invoice">
+      </form>
+      </td>
+   
+    <!--THIS BLOCK IS FOR INVOICE GENERATION  -->
+   
+   
     </tr>
 </core:forEach>
     </tbody>
     </table>
-   <!--  <input type="button" action = "AddProducts"value="Get Selected" onclick="GetSelected()" />
-  -->
+  
 </body>
 </html>

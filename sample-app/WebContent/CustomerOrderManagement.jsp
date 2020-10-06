@@ -39,6 +39,12 @@
       <input type="hidden" name="orderId" value="${u.orderId}">
       <input type="submit" value ="Approve">
       </form>
+      </td>
+      <td>
+      <form name = "itemDetails" method = "post" action = "FetchDetails">
+      <input type="hidden" name = "orderId" value="${u.orderId}">
+      <input type = "submit" value = "Details">
+      </form>
       
       </td>
     </tr>

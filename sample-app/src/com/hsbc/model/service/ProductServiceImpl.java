@@ -51,4 +51,11 @@ public class ProductServiceImpl implements ProductService {
 		return orders;
 	}
 
+	@Override
+	public List<Product> fetchProductList(int orderId) {
+		List<Product> items = new ArrayList<>();
+		items = prodDao.getProductList(orderId);
+		return items;
+	}
+
 }
