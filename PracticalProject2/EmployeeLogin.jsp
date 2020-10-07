@@ -16,12 +16,12 @@
             
             <tr style="margin-top:1cm;">
                 <div class="form-group" >
-                  <th><label for="email"> <h3>Email address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></label></th>
-                  <td><input style=" border-radius:8px; background-color: white; color: red; border: 1px solid #ff0000;" type="email" name = "email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"></td>
+                  <th><label for="username"> <h3> Username &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></label></th>
+                  <td><input style=" border-radius:8px; background-color: white; color: red; border: 1px solid #ff0000;" type="number" name = "username" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter Username"></td>
              </div>
             <tr style="margin-top:1cm;"> 
                 <div class="form-group" >
-                    <th><label for="password"><h3>Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></label></th>
+                    <th><label for="password"><h3> Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></label></th>
                         <td><input style="border-radius:8px; background-color: white; color: red; border: 1px solid #ff0000;" type="password" name = "password" class="form-control" id="password" placeholder="Password"></td>
                   
                 </div>
