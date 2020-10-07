@@ -11,45 +11,44 @@
         <center>
             <img  src = "Logo.png"> 
             <div margin:top = "3cm">
-            <table style="color:#ff0000; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Helvetica, cursive; padding-inline-start:1cm; padding-inline-end: ;">
+            <table style="color:#ef241c; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Helvetica, cursive; padding-inline-start:1cm; padding-inline-end: ;">
             <form action = "EmployeeLoginServlet" method = "POST">
             
             <tr style="margin-top:1cm;">
                 <div class="form-group" >
                   <th><label for="empid"> <h3> EmployeeId &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></label></th>
-                  <td><input style=" border-radius:8px; background-color: white; color: red; border: 1px solid #ff0000;" type="number" name = "empid" class="form-control" id="empid" aria-describedby="emailHelp" placeholder="Enter EmployeeId"></td>
+                  <td><input style=" border-radius:8px; background-color: white; color: #ef241c; border: 1px solid #ef241c;" type="text" name = "empid" class="form-control" id="empid" aria-describedby="emailHelp" placeholder="Enter Employee Id"></td>
              </div>
             <tr style="margin-top:1cm;"> 
                 <div class="form-group" >
                     <th><label for="password"><h3> Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></label></th>
-                        <td><input style="border-radius:8px; background-color: white; color: red; border: 1px solid #ff0000;" type="password" name = "password" class="form-control" id="password" placeholder="Password"></td>
+                        <td><input style="border-radius:8px; background-color: white; color: #ef241c; border: 1px solid #ef241c;" type="password" name = "password" class="form-control" id="password" placeholder="Password"></td>
                   
                 </div>
             </tr>
             <tr>
                 <th>
             <div class="form-group form-check" style="margin-top:0cm;">
-                <input style="background-color: white; color: red; border: 1px solid #ff0000;" type="checkbox"  id="exampleCheck1"></th>
+                <input style="background-color: white; color: #ef241c; border: 1px solid #ef241c;" type="checkbox"  id="exampleCheck1"></th>
                 <td><label class="form-check-label" for="exampleCheck1"><h5>I'm a human.</h5></label></td>
             
             </tr>
             <tr><th>
-            <%
-                String str1=(String) request.getAttribute("errormsg");
-                if(str1!=null)
-                {
-                	out.print(str1);
-                }
-
-                %><br>
-                <br>
-            <button style=" margin-top: 1 cm; background-color: white; color: red; border: 2px solid #ff0000; border-radius: 8px;" type="submit" class="btn btn-primary" > Submit </button></th></tr>
+            
+            <button style=" margin-top: 1 cm; background-color: white; color: #ef241c; border: 2px solid #ef241c; border-radius: 8px;" type="submit" class="btn btn-primary" > Submit </button></th></tr>
             </form>
             </table>
               </div>
+              <%               
+            String str1=(String) request.getAttribute("errormsg");
+                if(str1!=null)
+                {%>
+                	<h3 style="margin-top: 2cm; color:#EF241C"><%out.print(str1);
+                }
+                %>
             
 
-            <h3><marquee style="margin-top:1cm; color:#ff0000;">Notice:</marquee></h3> 
+            <h3><marquee style="margin-top:1cm; color:#ef241c;">Notice:</marquee></h3> 
         </div>
     </center>
       </div>
